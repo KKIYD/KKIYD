@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #fdfdff;
+    --secondary-color: #68aefd;
+    --accent-color: #e94560;
+    --background-color: #f6f6f6;
+    --font-color: #fff;
+    --secondary-font-color: #555;
+    --border-radius: 8px;
+    --box-shadow: 0px 4px 6px rgba(0 0 0 0.1);
+    --transtion: all 0.3s ease;
+    --oldtopbarcolor: rgb(20, 80, 121);
+}
+
+.contact-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: rgb(0, 0, 0);
+  font-family: Montserrat;
+}
+
+.contact-header-message {
+  font-family: Montserrat;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 auto;   
+  width: 100%;
+  max-width: 1500px;
+}
+
+.contact-info,
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 0 0 5px rgb(0, 162, 255);
+  border-radius: 8px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #ff2002;
+}
+
+.contact-info-title,
+.contact-form-title {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 22px;
+    background-color: black;
+    color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #116a7b;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #008cff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transtion)
+}
+
+.contact-form button:hover {
+  background-color: #0d5a69;
+}
+
+.contact-extra {
+  text-align: center;
+  padding: 1rem 2rem 3rem;
+  color: #555;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}

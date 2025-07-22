@@ -1,0 +1,78 @@
+<!-- blog.html -->
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog | Haberler ve Güncellemeler</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;700&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="blog.css">
+        <link rel="stylesheet" href="general.css">
+    </head>
+    <body>
+        <header>
+            <h1>Güncellemeler & Haberler</h1>
+            <p>Sahadan son gelişmeleri takip edin</p>
+            <div class="blog-nav">
+                <ul class="blog-nav-links">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="about.html">Hakkimizda</a></li>
+                    <li><a href="ourpartners.html">Ortaklarimiz</a></li>
+                    <li><a href="projects.html">Projelerimiz</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Bize Ulasin</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="hero-grid">
+                <div class="hero-article">
+                    <div class="hero-article-content">
+                        <div>
+                            <h2>İdlib Su Kuyusu Açıldı</h2>
+                            <p>İdlib'de temiz suya erişim artık daha kolay.
+                                Destekleriniz için teşekkür ederiz.</p>
+                        </div>
+                        <div>
+                            <img src="images/IMG-20250505-WA0009.jpg"
+                                alt="main">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/blog2.jpg" alt>
+                    <div class="card-content">
+                        <h3>Suriye'de Diger Su Projelerimize Basladik</h3>
+                        <p></p>
+                        <span class="date">18 Temmuz 2025</span>
+                    </div>
+                </div>
+            </section>
+            <section class="blog-grid" id="blog-posts"></section>
+        </main>
+        <script src="blogData.js"></script>
+        <script>
+  const blogGrid = document.getElementById("blog-posts");
+
+  blogPosts.slice(1).forEach((post, index) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${post.image}" alt="${post.title}">
+      <div class="card-content">
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <span class="date">${post.date}</span>
+      </div>
+    `;
+    blogGrid.appendChild(card);
+  });
+</script>
+    </body>
+</html>

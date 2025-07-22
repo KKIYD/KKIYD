@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="general.css">
+        <title>KKIYD</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="topbar">
+                <img class="waicon" src="images/apple.png"> <p
+                    class="phone-number">+90 (554)-115-4115</p>
+                <img class="mailicon" src="images/mail.png"> <p
+                    class="e-mail-address">info@kkiyd.org</p>
+                <img class="tblogo" src="images/transpglb5.png">
+            </div>
+            <div class="header-mid-section">
+                <p class="header-mid-section-kkiyd">Küresel Kalkınma ve İnsani
+                    Yardım Derneği</p>
+                <p class="header-mid-section-uwt">Ümmet Yardım Vakfı (İngiltere)
+                    İle Ortaklaşa... </p>
+            </div>
+            <nav class="navbar">
+                <a href="index.html"><img src="images/kkiyd-logo.png" alt="Logo"
+                        class="kkiyd-logo"></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="about.html">Hakkimizda</a></li>
+                    <li><a href="ourpartners.html">Ortaklarimiz</a></li>
+                    <li><a href="projects.html">Projelerimiz</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Bize Ulasin</a></li>
+                </ul>
+                <a href="https://uwt.org"><img
+                        src="images/uwt logo narrower.png" alt="Logo"
+                        class="uwt-logo"></a>
+            </nav>
+        </header>
+        <div class="stats">
+            <div>
+                <div class="stat" data-count="12">0</div>
+                <div class="stat-label">Bakım Evi Projesi</div>
+            </div>
+            <div>
+                <div class="stat" data-count="4300">0</div>
+                <div class="stat-label">Küresel Su Yardımı</div>
+            </div>
+            <div class="divider">
+                <p
+                    class="hero-title"><u>Birlikte</u> Hayatları
+                    Yeniden
+                    Kuruyoruz</p>
+                <div class="hero-buttons">
+                    <button
+                        onclick="window.location.href='projects.html'">Suriye Su
+                        Projelerimizi Gör</button>
+                    <button
+                        onclick="window.location.href='volunteer.html'">Gönüllü
+                        Ol</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="stat" data-count="16">0</div>
+                <div class="stat-label">Alt Yapı Projesi</div>
+            </div>
+            <div>
+                <div class="stat" data-count="2000">0</div>
+                <div class="stat-label">Hijyen Kiti</div>
+            </div>
+        </div>
+
+        <section class="content-hero">
+            <h2>Türkiye ve Suriye'de Büyük Bir Çaba!</h2>
+            <p class="hero-description">Kur'an Kurslarimiz 50
+                seneden beri degil ama yine de var bayagidir
+            </p>
+            <a href="projects.html" class="btn">Tum Projelerimize Göz
+                Atın</a>
+        </section>
+        <div class="video-and-blog">
+            <section class="video-section">
+                <p class="video-section-title">Son Eklenen Video</p>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/ejIcoeeLFMk?si=7glI37h0EzvWRyME"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </section>
+            <section class="latest-blog-preview">
+                <p class="hp-blog-title">Son Haberler</h2>
+                <div id="blog-preview-container"
+                    class="blog-preview-grid"></div>
+                <a href="blog.html" class="see-more">Tümünü Gör</a>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Küresel Kalkınma ve İnsani Yardım Derneği</p>
+            <p>Instagram | YouTube | Facebook</p>
+        </footer>
+        <script src="script.js"></script>
+        <script src="blogData.js"></script>
+        <script>
+        const previewContainer = document.getElementById("blog-preview-container");
+
+        blogPosts.slice(0, 3).forEach(post => {
+         const card = document.createElement("div");
+        card.classList.add("preview-card");
+        card.innerHTML = `
+        <img src="${post.image}" alt="${post.title}">
+        <div class="card-content">
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <span class="date">${post.date}</span>
+        </div>
+        `;
+        card.onclick = () => {
+        window.location.href = post.url;
+        };
+        previewContainer.appendChild(card);
+        });
+        </script>
+    </body>
+</html>
