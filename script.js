@@ -30,7 +30,7 @@ function toggleVideo(button) {
 const counters = document.querySelectorAll(".stat");
 counters.forEach((counter) => {
   const target = +counter.getAttribute("data-count");
-  const speed = 30; // smaller = faster
+  const speed = 100; // smaller = faster
   let count = 0;
 
   const updateCount = () => {

@@ -31,27 +31,32 @@
             <nav class="navbar">
                 <a href="index.html"><img src="images/kkiyd-logo.png" alt="Logo"
                         class="kkiyd-logo"></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li><a href="about.html">Hakkimizda</a></li>
-                    <li><a href="ourpartners.html">Ortaklarimiz</a></li>
-                    <li><a href="projects.html">Projelerimiz</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Bize Ulasin</a></li>
-                </ul>
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="about.html">Hakkimizda</a></li>
+                        <li><a href="ourpartners.html">Ortaklarimiz</a></li>
+                        <li><a href="projects.html">Projelerimiz</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Bize Ulasin</a></li>
+                    </ul>
+                </div>
                 <a href="https://uwt.org"><img
                         src="images/uwt logo narrower.png" alt="Logo"
                         class="uwt-logo"></a>
+                <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">
+                    ☰
+                </button>
             </nav>
         </header>
         <div class="stats">
-            <div>
-                <div class="stat" data-count="12">0</div>
-                <div class="stat-label">Bakım Evi Projesi</div>
+            <div class="counter">
+                <div class="stat" data-count="100000">0</div>
+                <div class="stat-label">Bebek Sütü</div>
             </div>
-            <div>
-                <div class="stat" data-count="4300">0</div>
-                <div class="stat-label">Küresel Su Yardımı</div>
+            <div class="counter">
+                <div class="stat" data-count="40000">0</div>
+                <div class="stat-label">Gıda Sepeti</div>
             </div>
             <div class="divider">
                 <p
@@ -63,17 +68,17 @@
                         onclick="window.location.href='projects.html'">Suriye Su
                         Projelerimizi Gör</button>
                     <button
-                        onclick="window.location.href='volunteer.html'">Gönüllü
+                        onclick="window.location.href='contact.html'">Gönüllü
                         Ol</button>
                 </div>
             </div>
 
-            <div>
-                <div class="stat" data-count="16">0</div>
-                <div class="stat-label">Alt Yapı Projesi</div>
+            <div class="counter">
+                <div class="stat" data-count="300000">0</div>
+                <div class="stat-label">Somun Ekmek</div>
             </div>
-            <div>
-                <div class="stat" data-count="2000">0</div>
+            <div class="counter">
+                <div class="stat" data-count="20000">0</div>
                 <div class="stat-label">Hijyen Kiti</div>
             </div>
         </div>
@@ -105,8 +110,15 @@
         </div>
 
         <footer>
-            <p>&copy; 2025 Küresel Kalkınma ve İnsani Yardım Derneği</p>
-            <p>Instagram | YouTube | Facebook</p>
+            <p class="footer-brand">&copy; 2025 Küresel Kalkınma ve İnsani
+                Yardım Derneği</p>
+            <p><a target="_blank"
+                    href="https://www.instagram.com/ummahwelfaretrust/">Instagram</a>
+                | <a target="_blank"
+                    href="https://www.youtube.com/@KKIYD">YouTube</a> | <a
+                    target="_blank"
+                    href="https://www.facebook.com/Ummahwelfaretrust/">Facebook</a>
+            </p>
         </footer>
         <script src="script.js"></script>
         <script src="blogData.js"></script>
@@ -117,7 +129,6 @@
          const card = document.createElement("div");
         card.classList.add("preview-card");
         card.innerHTML = `
-        <img src="${post.image}" alt="${post.title}">
         <div class="card-content">
         <h3>${post.title}</h3>
         <p>${post.content}</p>
@@ -129,6 +140,14 @@
         };
         previewContainer.appendChild(card);
         });
+        </script>
+        <script>
+        const toggleButton = document.querySelector(".menu-toggle");
+        const navContainer = document.querySelector(".nav-container");
+
+        toggleButton.addEventListener("click", () => {
+         navContainer.classList.toggle("active");
+         });
         </script>
     </body>
 </html>

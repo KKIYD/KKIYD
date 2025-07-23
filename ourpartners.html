@@ -31,17 +31,22 @@
             <nav class="navbar">
                 <a href="index.html"><img src="images/kkiyd-logo.png" alt="Logo"
                         class="kkiyd-logo"></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Anasayfa</a></li>
-                    <li><a href="about.html">Hakkimizda</a></li>
-                    <li><a href="ourpartners.html">Ortaklarimiz</a></li>
-                    <li><a href="projects.html">Projelerimiz</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Bize Ulasin</a></li>
-                </ul>
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="about.html">Hakkimizda</a></li>
+                        <li><a href="ourpartners.html">Ortaklarimiz</a></li>
+                        <li><a href="projects.html">Projelerimiz</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Bize Ulasin</a></li>
+                    </ul>
+                </div>
                 <a href="https://uwt.org"><img
                         src="images/uwt logo narrower.png" alt="Logo"
                         class="uwt-logo"></a>
+                <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">
+                    ☰
+                </button>
             </nav>
         </header>
         <main class="container">
@@ -110,6 +115,22 @@
             </section>
         </main>
         <footer>
-            <p>&copy; 2025 Küresel Kalkınma ve İnsani Yardım Derneği</p>
-            <p>Instagram | YouTube | Facebook</p>
+            <p class="footer-brand">&copy; 2025 Küresel Kalkınma ve İnsani
+                Yardım Derneği</p>
+            <p><a target="_blank"
+                    href="https://www.instagram.com/ummahwelfaretrust/">Instagram</a>
+                | <a target="_blank"
+                    href="https://www.youtube.com/@KKIYD">YouTube</a> | <a
+                    target="_blank"
+                    href="https://www.facebook.com/Ummahwelfaretrust/">Facebook</a>
+            </p>
         </footer>
+        <script>
+        const toggleButton = document.querySelector(".menu-toggle");
+        const navContainer = document.querySelector(".nav-container");
+
+        toggleButton.addEventListener("click", () => {
+         navContainer.classList.toggle("active");
+         });
+        </script>
+    </body>

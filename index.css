@@ -25,6 +25,10 @@
     font-weight: 500;
   }
 
+  .counter {
+    width: 150px;
+  }
+
   .hero-description {
     margin-left: 100px;
     margin-top: 25px;
@@ -121,13 +125,13 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
-    font-family: Montserrat;
+    transition: background 0.5s;
+    font-family: 'Poppins';
     font-weight: 400;
   }
 
   .hero-buttons button:hover {
-    background: #0d3c5a;
+    background: #707070;
   }
 
   .video-section {
