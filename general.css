@@ -47,24 +47,23 @@ body {
 }
 
 .header-mid-section {
-  line-height: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header-mid-section-kkiyd {
-  font-size: 30px;
-  font-weight: 600;
-  justify-self: center;
-  font-family: Poppins;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+  font-size: 40px;
+  font-family: 'Poppins';
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  margin: 15px;
 }
 
 .header-mid-section-uwt {
-  font-size: 20px;
+  font-family: 'Poppins';
+  font-size: 25px;
+  margin: 0;
   font-style: italic;
-  justify-self: center;
-  transform: translateX(250px);
-  font-family: Poppins;
-  text-shadow: 0px 0px 2px rgba(26, 73, 145, 0.5);
 }
 
 .kkiyd-logo,
@@ -100,7 +99,7 @@ nav ul li a:hover {
   height: 50px;
   color: white;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   box-shadow: 0px 5px 5px rgb(12, 51, 63);
   display: flex;
   align-items: center;
@@ -149,6 +148,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
+    margin-top: 50px;
   }
 
   .nav-container {
@@ -181,6 +181,62 @@ nav ul li a:hover {
   .kkiyd-logo,
   .uwt-logo {
     width: 180px;
+  }
+
+  .waicon,
+  .mailicon {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 5px;
+  }
+
+  .tblogo {
+    position: static;
+    transform: none;
+    height: 40px;
+    margin: 0 40px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .uwt-logo {
+    order: 3;
+    /* Make sure it comes last */
+    align-self: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-container.active {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    align-self: flex-end;
+  }
+
+  .header-mid-section-kkiyd {
+    font-size: 30px;
+    font-family: 'Poppins';
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    text-align: center;
+  }
+
+  .header-mid-section-uwt {
+    font-family: 'Poppins';
+    font-size: 20px;
+    margin: 0;
+    font-style: italic;
   }
 }
 

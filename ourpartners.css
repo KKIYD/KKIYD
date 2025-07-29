@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 10rem;
 }
 
 .partner-card {
@@ -26,7 +26,7 @@
 .partner-card img {
     margin-bottom: 1rem;
     max-height: 200px;
-    width: fit-content
+    width: fit-content;
 }
 
 .stk-row img {
@@ -71,4 +71,18 @@
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .partners-content {
+        height: fit-content;
+    }
+
+    .stk-row img {
+        margin-right: 0;
+    }
+
+    .stk-row {
+        margin-left: 0;
+    }
 }

@@ -1,9 +1,10 @@
+// Filter Buttons Logic
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".card");
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Remove active class from all buttons
+    // Remove 'active' from all buttons, add to the clicked one
     filterButtons.forEach((btn) => btn.classList.remove("active"));
     button.classList.add("active");
 
@@ -11,16 +12,22 @@ filterButtons.forEach((button) => {
 
     projectCards.forEach((card) => {
       const category = card.getAttribute("data-category");
-
       if (filter === "all" || category === filter) {
-        card.style.display = "block";
+        card.classList.remove("hidden");
       } else {
-        card.style.display = "none";
+        card.classList.add("hidden");
       }
     });
+
+    // Optional: Fix layout bugs (force grid reflow)
+    const grid = document.querySelector(".card-grid");
+    grid.style.display = "none";
+    void grid.offsetHeight;
+    grid.style.display = "";
   });
 });
 
+// Expand Video Section
 function toggleVideo(button) {
   const videoContainer = button.nextElementSibling;
   videoContainer.classList.toggle("expanded");
@@ -28,21 +35,23 @@ function toggleVideo(button) {
 
 // Fast Count Effect
 const counters = document.querySelectorAll(".stat");
+
 counters.forEach((counter) => {
   const target = +counter.getAttribute("data-count");
-  const speed = 100; // smaller = faster
-  let count = 0;
+  const duration = 1000; // total duration in ms
+  const start = performance.now();
 
-  const updateCount = () => {
-    const increment = Math.ceil(target / speed);
-    count += increment;
-    if (count < target) {
-      counter.innerText = count;
+  function updateCount(timestamp) {
+    const progress = Math.min((timestamp - start) / duration, 1);
+    const value = Math.floor(progress * target);
+    counter.textContent = value;
+
+    if (progress < 1) {
       requestAnimationFrame(updateCount);
     } else {
-      counter.innerText = target;
+      counter.textContent = target;
     }
-  };
+  }
 
-  updateCount();
+  requestAnimationFrame(updateCount);
 });

@@ -25,12 +25,17 @@
                 <ul class="blog-nav-links">
                     <li><a href="index.html">Anasayfa</a></li>
                     <li><a href="about.html">Hakkimizda</a></li>
+                    <li><a href="announcements.html">Duyurular</a></li>
                     <li><a href="ourpartners.html">Ortaklarimiz</a></li>
                     <li><a href="projects.html">Projelerimiz</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Bize Ulasin</a></li>
                 </ul>
+
             </div>
+            <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">
+                ☰
+            </button>
         </header>
         <main class="container">
             <section class="hero-grid">
@@ -55,5 +60,13 @@
         </footer>
         <script src="blogData.js"></script>
         <script src="blogworks.js" defer></script>
+        <script>
+        const toggleButton = document.querySelector(".menu-toggle");
+        const navContainer = document.querySelector(".blog-nav");
+
+        toggleButton.addEventListener("click", () => {
+         navContainer.classList.toggle("active");
+         });
+        </script>
     </body>
 </html>
