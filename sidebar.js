@@ -15,10 +15,11 @@ const monthNamesTr = [
 
 const announcementData = {
   2025: {
-    "07": ["ornek-dosya2.png", "ornek-dosya3.png"],
+    "07": ["07.2025_1.png"],
+    "08": ["08.2025_1.png"],
   },
   2024: {
-    12: ["ornek-dosya1.png"],
+    12: ["12.2024_1.png"],
   },
 };
 

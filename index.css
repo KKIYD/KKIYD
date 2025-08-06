@@ -31,9 +31,9 @@
 
   .hero-description {
     margin-left: 100px;
-    margin-top: 25px;
+    margin-top: 100px;
     color: rgb(255, 255, 255);
-    width: 300px;
+    width: 400px;
     text-align: center;
     font-family: 'Poppins';
     position: relative;
@@ -132,7 +132,11 @@
   }
 
   .hero-buttons button:hover {
-    background: #707070;
+    background: rgb(0, 204, 255);
+  }
+
+  .hero-buttons .b2:hover {
+    background: green;
   }
 
   .video-section {
@@ -160,6 +164,7 @@
     margin-right: 10px;
     max-width: 100%;
   }
+
 
 
 
@@ -283,6 +288,8 @@
       position: static;
       transform: none;
       left: auto;
+      margin-bottom: 50px;
+      margin-top: 0;
     }
 
     .hero-description {
@@ -324,4 +331,200 @@
     .preview-card {
       max-width: 100%;
     }
+  }
+
+  /* theres this tooo */
+
+
+  .image-gallery {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 50px 10px 150px 10px;
+    border-radius: 25px;
+    box-shadow: 0 0 3px rgb(156, 156, 156);
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+  }
+
+  .album {
+    margin-top: 80px;
+    padding-bottom: 150px;
+  }
+
+  .albums {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album-selector {
+    margin-top: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .album-selector>button {
+    padding: 15px 100px;
+    background-color: rgb(146, 202, 255);
+    border: 2px solid rgb(146, 202, 255);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    transition: all 0.4s ease;
+  }
+
+  .album-selector>button:hover {
+    background-color: rgb(220, 239, 255);
+    border: 2px solid rgb(220, 239, 255);
+    cursor: pointer;
+  }
+
+  .album-selector>button.active {
+    box-shadow: 0px 0px 5px white;
+    background-color: rgb(220, 239, 255);
+    font-size: 25px;
+    padding: 12px 85px;
+    border: 2px solid aqua;
+  }
+
+  .container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5px;
+    transition: all 400ms;
+    margin: 0 5px;
+  }
+
+  .card {
+    flex: 1;
+    height: 100%;
+    transition: all 1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card>img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+    border-radius: 15px;
+  }
+
+  .container:hover .card:not(:hover) {
+    filter: grayscale(100%);
+  }
+
+  .card:hover {
+    flex: 5;
+  }
+
+  .card>img:hover {
+    transform: scale(1.1);
+
+  }
+
+  .description {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    bottom: -50px;
+    opacity: 0;
+    transition: all 1s;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .card:hover .description {
+    opacity: 0.9;
+    transform: translateY(-100%);
+    transform: scale(1.1);
+    height: 90px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .album-selector {
+      flex-direction: column;
+    }
+
+    .card:hover .description {
+      opacity: 0;
+    }
+
+    .card>img {
+      height: fit-content;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+
+  }
+
+  @media (min-width: 1000px) {
+    .modal img {
+      width: 0;
+    }
+
+  }
+
+  .gallery-title {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 30px;
+    background-color: rgb(245, 245, 245);
+    padding: 30px;
   }

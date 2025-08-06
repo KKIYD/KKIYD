@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-        url(/REALKKIYD/images/woodenbg.jpg);
+        url(images/woodenbg.jpg);
     display: flex;
     justify-content: center;
     position: relative;
@@ -19,7 +19,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     font-size: 25px;
-    box-shadow: 0 0 5px white;
+    border: 3px solid red;
+}
+
+.homepage-button:hover {
+    border: 5px solid white;
+    box-shadow: -1px -1px 3px white;
+
 }
 
 #sidebar {
@@ -92,7 +98,7 @@ img {
     font-size: 50px;
     margin-top: 50px;
     text-shadow: 0 0 3px white;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(106, 166, 255, 0.26);
     text-align: center;
     padding: 5px 50px;
     border-radius: 15px;
@@ -130,12 +136,69 @@ footer a {
 
 @media (max-width: 768px) {
     .homepage-button {
-        top: 750px;
+        top: 0;
+        right: 0;
+        left: 100px;
+        text-align: center;
     }
 
     #sidebar {
-        top: 600px;
-        right: 15px;
+        top: 176px;
+        right: 0px;
         background-color: white;
     }
+
+    .logo {
+        width: 60px;
+    }
+}
+
+/* testing tuff */
+
+#sidebar {
+    width: 250px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    background: #eee;
+    position: fixed;
+    right: 0;
+    top: 250px;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+#sidebar.collapsed {
+    width: 52px;
+    padding: 0;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 2px;
+    right: 1px;
+    width: 50px;
+    background-color: #000000d7;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px black;
+    color: white;
+}
+
+#sidebar.collapsed .sidebar-title {
+    display: none;
+}
+
+@media (max-width:768px) {
+    #sidebar.collapsed {
+        width: 52px;
+        padding: 0;
+        height: 42px;
+    }
+
 }

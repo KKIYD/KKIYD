@@ -83,7 +83,8 @@ nav ul li a {
 nav ul li a:hover {
   background-color: rgb(255, 255, 255);
   color: black;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 0 3px white;
+  padding: 10px 15px;
 }
 
 .navbar {
@@ -193,14 +194,14 @@ nav ul li a:hover {
   .tblogo {
     position: static;
     transform: none;
-    height: 40px;
-    margin: 0 40px;
+    height: 35px;
   }
 
   .topbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 13px;
   }
 
   .uwt-logo {
